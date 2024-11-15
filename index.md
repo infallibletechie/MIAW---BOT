@@ -4,6 +4,13 @@
 		try {
 			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
 
+			window.addEventListener("onEmbeddedMessagingReady", () => {            
+				console.log( "Inside Prechat API!!" );
+				embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields( { 
+    					"Site" : window.location.href 
+	 			} );
+			});
+
 			embeddedservice_bootstrap.init(
 				'00Dau000002ItPt',
 				'MIAW_BOT',
